@@ -1,0 +1,6 @@
+# ~/.config/<tool>/settings.yaml  (edited in the settings screen, kept apart from the server list)
+bar_colors: current      # "current", "greyscale" or "custom"
+custom_start: "#5A56E0"  # used with "custom"
+custom_end: "#EE6FF8"
+kill_signal: TERM
+sort_order: config       # config, name, id, status, cpu, mem, disk

@@ -1,0 +1,18 @@
+# ~/.config/<tool>/config.yaml  (profile "default")
+# More lists go into ~/.config/<tool>/profiles/<name>.yaml in the same format.
+# Prefer key files; "password" works but is stored as plain text.
+servers:
+  - id: web-1
+    name: web-1
+    host: 203.0.113.10        # documentation range, replace with your server
+    user: root
+    port: 22
+    keypath: ~/.ssh/id_ed25519
+    group: prod               # optional: groups the overview
+  - id: db-1
+    name: db-1
+    host: 203.0.113.11
+    user: deploy
+    port: 22
+    keypath: ~/.ssh/id_ed25519
+    group: prod
