@@ -70,10 +70,24 @@ Folders sort first. Copying whole folders is not supported yet.
 | `o` | sort |
 | `d` | table or cards |
 | `P` | profiles |
+| `a` | add a server |
 | `c` | settings |
 | `ctrl+r` | reload config |
 | `esc` | back |
 | `q`, `ctrl+c` | quit |
+
+## Adding servers
+
+`a` in the fleet view, or the "+ Add a server" row at the bottom of the config screen (`c`), opens a
+form: name, host, user (default `root`), port (default 22), key file (default `~/.ssh/id_ed25519`),
+password (masked, only if no key) and an optional group. `tab`/`shift+tab` or the arrow keys move between
+fields, `enter` moves on and saves on the last field, `ctrl+s` saves from anywhere, `esc` cancels (back to
+the config screen if that is where it was opened). Validation: name, host and user are required, the host has no
+spaces, the port is 1 to 65535, and a key file or a password is needed; the first problem is shown under the form
+and the cursor jumps to that field. The id is derived from the name (`Web Server 1` becomes `web-server-1`, with a
+numeric suffix if taken); names are unique, ignoring case. The server is appended to the active profile's file (read
+fresh from disk, so hand edits are kept), the file is written 0600, the new server is selected and starts connecting at once.
+Saving rewrites the YAML, so comments in the file are lost.
 
 ## Profiles and settings
 
